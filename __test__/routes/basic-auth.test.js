@@ -23,9 +23,9 @@ describe('Testing basic auth routes', function() {
       };
 
       return superagent.post(':4444/api/signup')
-      .send(this.mockUserData)
-      .then(res => this.res = res)
-      .catch(console.error);
+        .send(this.mockUserData)
+        .then(res => this.res = res)
+        .catch(console.error);
     });
 
     describe('Valid Requests', () => {
@@ -49,12 +49,12 @@ describe('Testing basic auth routes', function() {
   describe('GET to /api/signin', function() {
     beforeAll(() => {
       return mocks.user.createOne()
-      .then(userData => {
-        this.tempUser = userData.user;
-        return superagent.get(':4444/api/signin')
-        .auth(userData.user.username, userData.password)
-        .then(res => this.res = res);
-      });
+        .then(userData => {
+          this.tempUser = userData.user;
+          return superagent.get(':4444/api/signin')
+            .auth(userData.user.username, userData.password)
+            .then(res => this.res = res);
+        });
     });
     describe('Valid Requests', () => {
       test('should return a token', () => {

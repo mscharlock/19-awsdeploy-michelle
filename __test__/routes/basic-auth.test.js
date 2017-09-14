@@ -18,6 +18,7 @@ describe('Testing basic auth routes', function() {
     describe('Valid Requests', () => {
       test('should respond with a token', () => {
         expect(true).toBeTruthy();
-     });
+      });
+    });
   });
 });

@@ -15,19 +15,6 @@ describe('Testing basic auth routes', function() {
 
   //POST
   describe('POST to /api/signup', function() {
-    beforeAll(() => {
-      this.mockUserData = {
-        username: faker.internet.userName(),
-        password: faker.internet.password(),
-        email: faker.internet.email(),
-      };
-
-      return superagent.post(':4444/api/signup')
-        .send(this.mockUserData)
-        .then(res => this.res = res)
-        .catch(console.error);
-    });
-
     describe('Valid Requests', () => {
       test('should respond with a token', () => {
         expect(true).toBeTruthy();

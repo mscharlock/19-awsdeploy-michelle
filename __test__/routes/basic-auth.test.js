@@ -12,7 +12,9 @@ describe('Testing basic auth routes', function() {
   afterAll(server.stop);
   afterEach(mocks.user.removeAll);
   
- expect(true).toBe(true);
+ describe('Valid Requests', () => {
+  test('should respond with a token', () => {
+    expect(true).toBe(true);
 
 
 //   //POST

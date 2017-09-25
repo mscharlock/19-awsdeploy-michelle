@@ -2,7 +2,6 @@
 
 const faker = require('faker');
 const mocks = require('../lib/mocks');
-const User = require('../../model/user');
 const superagent = require('superagent');
 const server = require('../../lib/server');
 require('jest');
@@ -37,11 +36,6 @@ describe('Testing basic auth routes', function() {
         expect(this.res.status).toBe(201);
       });
     });
-    describe('Invalid Requests', () => {
-      test('should return a status of 400 given an invalid req', () => {
-        expect(this.res.status).toBe(400);
-      });
-    });
   });
 
 
@@ -58,22 +52,9 @@ describe('Testing basic auth routes', function() {
     });
     describe('Valid Requests', () => {
       test('should return a token', () => {
-        expect(this.res.text).toBeTtoBeTruthy();
+        expect(this.res.text).toBeTruthy();
         expect(this.res.text.length > 1).toBeTruthy();
       });
-    });
-    test('should return a token', () => {
-      expect(this.res.text).toBeTruthy();
-      expect(this.res.text.length > 1).toBeTruthy();
-    });
-
-    test('should return a status of 200', ()=> {
-      expect(this.res.status).toBe(200);
-    });
-  });
-  describe('Invalid Requests', () => {
-    test('should return a status of 401', () => {
-      expect(this.res.status).toBe(401);
     });
   });
 });
